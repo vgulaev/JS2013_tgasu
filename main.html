@@ -27,13 +27,19 @@ function dosamething1()
 	window.onmousemove = handleMouseMove;
 }
 
+function moveme()
+{
+	//alert('Complate!');
+	bt = document.getElementById("runningButton");
+	bt.offsetLeft = bt.offsetLeft + 20;
+}
 </script>
 <head>
 </head>
 <body onload="dosamething1()">
 <p>Привет мир!!!</p>
 <button onclick = "dosamething()">Нажми меня!!!</button>
-<button onclick = "dosamething()">Бегающая кнопка меня!!!</button>
+<button id = "runningButton" onclick = "moveme()" style = "position: absolute">Бегающая кнопка меня!!!</button>
 <p>POSX: <input type="text" id="posx"></p>
 <p>POSY: <input type="text" id="posy"></p>
 <div id = "output"></div>
