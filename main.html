@@ -3,8 +3,11 @@
 <script type="text/javascript">
 function dosamething()
 {
-	alert('Hello, World!');
-	console.log('Hello, World!');
+	//alert('Hello, World!');
+	//console.log('Hello, World!');
+	
+	output = document.getElementById("output");
+	output.innerText = "fssdfsdf";
 }
 
 function handleMouseMove(event)
@@ -19,7 +22,7 @@ function handleMouseMove(event)
 
 function dosamething1()
 {
-	alert('Complate!');
+	//alert('Complate!');
 	
 	window.onmousemove = handleMouseMove;
 }
@@ -30,7 +33,9 @@ function dosamething1()
 <body onload="dosamething1()">
 <p>Привет мир!!!</p>
 <button onclick = "dosamething()">Нажми меня!!!</button>
+<button onclick = "dosamething()">Бегающая кнопка меня!!!</button>
 <p>POSX: <input type="text" id="posx"></p>
 <p>POSY: <input type="text" id="posy"></p>
+<div id = "output"></div>
 </body>
 </html>
