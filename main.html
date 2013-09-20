@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+п»ї<!DOCTYPE html>
 <html>
 <script type="text/javascript">
 function dosamething()
@@ -7,16 +7,30 @@ function dosamething()
 	console.log('Hello, World!');
 }
 
+function handleMouseMove(event)
+{
+	event = event || window.event;
+	ix = document.getElementById("posx");
+	ix.value = event.pageX;
+
+	iy = document.getElementById("posy");
+	iy.value = event.pageY;
+}
+
 function dosamething1()
 {
 	alert('Complate!');
+	
+	window.onmousemove = handleMouseMove;
 }
 
 </script>
 <head>
 </head>
 <body onload="dosamething1()">
-<p>Привет мир!!!</p>
-<button onclick = "dosamething()">Кнопка</button>
+<p>РџСЂРёРІРµС‚ РјРёСЂ!!!</p>
+<button onclick = "dosamething()">РќР°Р¶РјРё РјРµРЅСЏ!!!</button>
+<p>POSX: <input type="text" id="posx"></p>
+<p>POSY: <input type="text" id="posy"></p>
 </body>
 </html>
