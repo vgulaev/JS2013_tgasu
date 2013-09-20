@@ -31,7 +31,9 @@ function moveme()
 {
 	//alert('Complate!');
 	bt = document.getElementById("runningButton");
-	bt.style.left = "100px";
+	//bt.style.left = "100px";
+	bt.style.left = parseInt(bt.style.left) + 10 + "px";
+	k = 1;
 	//bt.offsetLeft = bt.offsetLeft + 20;
 }
 </script>
@@ -40,7 +42,7 @@ function moveme()
 <body onload="dosamething1()">
 <p>Привет мир!!!</p>
 <button onclick = "dosamething()">Нажми меня!!!</button>
-<div id = "runningButton" style = "position: absolute"><button  onclick = "moveme()">Бегающая кнопка меня!!!</button></div>
+<div id = "runningButton" style = "position: absolute; left: 10px"><button  onclick = "moveme()">Бегающая кнопка меня!!!</button></div>
 <p>POSX: <input type="text" id="posx"></p>
 <p>POSY: <input type="text" id="posy"></p>
 <div id = "output"></div>
