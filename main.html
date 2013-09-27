@@ -36,15 +36,33 @@ function moveme()
 	k = 1;
 	//bt.offsetLeft = bt.offsetLeft + 20;
 }
+
+function makebit()
+{
+	var bt = document.getElementById("redcircle");
+	for (var i=0; i<10; i++) {
+		bt.setAttribute("r", 100 - 10 * i + "px");
+	}
+}
+
 </script>
 <head>
 </head>
 <body onload="dosamething1()">
 <p>Привет мир!!!</p>
 <button onclick = "dosamething()">Нажми меня!!!</button>
+<button onclick = "makebit()">Двинуть круг</button>
 <div id = "runningButton" style = "position: absolute; left: 10px"><button  onclick = "moveme()">Бегающая кнопка меня!!!</button></div>
 <p>POSX: <input type="text" id="posx"></p>
 <p>POSY: <input type="text" id="posy"></p>
 <div id = "output"></div>
+<svg version = "1.1" baseProfile="full" xmlns = "http://www.w3.org/2000/svg" xmlns:xlink = "http://www.w3.org/1999/xlink" xmlns:ev = "http://www.w3.org/2001/xml-events"      height = "400px"  width = "400px">
+     <rect x="0" y="0" width="400" height="400" fill="none" stroke="black" stroke-width="5px" stroke-opacity="0.5"/>
+     <g fill-opacity="0.6" stroke="black" stroke-width="0.5px">
+        <circle id = "redcircle" cx="200px" cy="200px" r="104px" fill="red"   transform="translate(  0,-52)" />
+        <circle cx="200px" cy="200px" r="104px" fill="blue"  transform="translate( 60, 52)" />
+        <circle cx="200px" cy="200px" r="104px" fill="green" transform="translate(-60, 52)" />
+     </g>
+</svg>
 </body>
 </html>
