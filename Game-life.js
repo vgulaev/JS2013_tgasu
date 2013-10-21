@@ -1,4 +1,4 @@
-﻿function makesomething()
+function makesomething()
 {
 	alert("jr");
 	
@@ -28,13 +28,22 @@ function checklife(x, y)
 			if ((nx < 0) || (nx > 59) || (ny < 0) || (ny > 59)){
 			}
 			else{
-			neib = neib + lifefield[nx][ny];
+			if (Math.abs(lifefield[nx][ny]) == 1){
+			neib = neib + 1;
+			}
 			}
 		}
 	}
+	
 	var r = 0;
-	if (neib == 3){
-		r = 1;
+	if ((neib == 3)&&(lifefield[x][y] == 0)){
+		r = 2; //new born
+	}
+	if ((neib == 2)&&(lifefield[x][y] == 1)){
+		r = 1; //stay life
+	}
+	if ((r == 0)&&(lifefield[x][y] == 1)){
+		r = -1;
 	}
 	return r;
 }
@@ -46,6 +55,17 @@ function nextstep()
 			lifefield[i][j] = checklife(i, j);
 		}
 	}
+	for (var i = 0; i < 60; i++){
+		for (var j = 0; j < 60; j++){
+			if (lifefield[i][j] > 0){
+				lifefield[i][j] = 1;
+			}
+			else{
+				lifefield[i][j] = 0;
+			}
+		}
+	}	
+	//checklife(21, 19);
 	paintlife();
 }
 
