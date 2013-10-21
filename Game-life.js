@@ -1,4 +1,4 @@
-function makesomething()
+﻿function makesomething()
 {
 	alert("jr");
 	
