@@ -35,6 +35,13 @@ lifefield[3][9] = 1;
 lifefield[2][8] = 1;
 
 //Планер
+lifefield[25][10] = 1;
+lifefield[26][10] = 1;
+lifefield[27][10] = 1;
+lifefield[25][9] = 1;
+lifefield[26][8] = 1;
+
+//Планер
 lifefield[20][10] = 1;
 lifefield[21][10] = 1;
 lifefield[22][10] = 1;
