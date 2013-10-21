@@ -27,11 +27,24 @@ lifefield[12][5] = 1;
 lifefield[12][4] = 1;
 lifefield[11][3] = 1;
 
+//Планер
+lifefield[1][10] = 1;
+lifefield[2][10] = 1;
+lifefield[3][10] = 1;
+lifefield[3][9] = 1;
+lifefield[2][8] = 1;
+
+//Планер
+lifefield[20][10] = 1;
+lifefield[21][10] = 1;
+lifefield[22][10] = 1;
+lifefield[20][9] = 1;
+lifefield[21][8] = 1;
+
 //Просто линия из 3 элементов
 lifefield[3][3] = 1;
 lifefield[4][3] = 1;
 lifefield[5][3] = 1;
-
 
 /////Фигура в классе
 lifefield[20][20] = 1;
@@ -100,6 +113,7 @@ function nextstep()
 	}	
 	//checklife(21, 19);
 	paintlife();
+	setTimeout("nextstep()", 100)
 }
 
 function paintlife()
