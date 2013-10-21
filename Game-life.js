@@ -12,10 +12,43 @@ for (var i = 0; i < 60; i++){
 	}
 }
 
+
+//Планер
+lifefield[10][10] = 1;
+lifefield[11][10] = 1;
+lifefield[12][10] = 1;
+lifefield[12][9] = 1;
+lifefield[11][8] = 1;
+
+//Планер
+lifefield[10][5] = 1;
+lifefield[11][5] = 1;
+lifefield[12][5] = 1;
+lifefield[12][4] = 1;
+lifefield[11][3] = 1;
+
+//Просто линия из 3 элементов
+lifefield[3][3] = 1;
+lifefield[4][3] = 1;
+lifefield[5][3] = 1;
+
+
+/////Фигура в классе
 lifefield[20][20] = 1;
 lifefield[21][20] = 1;
 lifefield[22][20] = 1;
 
+lifefield[20][24] = 1;
+lifefield[21][24] = 1;
+lifefield[22][24] = 1;
+
+lifefield[19][21] = 1;
+lifefield[18][22] = 1;
+lifefield[19][23] = 1;
+
+lifefield[23][21] = 1;
+lifefield[24][22] = 1;
+lifefield[23][23] = 1;
 
 function checklife(x, y)
 {
@@ -39,7 +72,7 @@ function checklife(x, y)
 	if ((neib == 3)&&(lifefield[x][y] == 0)){
 		r = 2; //new born
 	}
-	if ((neib == 2)&&(lifefield[x][y] == 1)){
+	if (((neib == 3)||(neib == 2))&&(lifefield[x][y] == 1)){
 		r = 1; //stay life
 	}
 	if ((r == 0)&&(lifefield[x][y] == 1)){
@@ -71,6 +104,13 @@ function nextstep()
 
 function paintlife()
 {
+	var elements = document.querySelectorAll(".cells");
+	if (elements != null){
+		for (var i = 0; i < elements.length; i++){
+			elements[i].remove();
+		}
+	}
+	
 	for (var i = 0; i < 60; i++){
 		for (var j = 0; j < 60; j++){
 		if (lifefield[i][j] == 1){
@@ -84,6 +124,7 @@ function paintlife()
 			ll.setAttribute("stroke-width", "0px");
 			ll.setAttribute("troke-opacity", "0.5");
 			ll.setAttribute("id", "lf"+i+"-"+j);
+			ll.setAttribute("class", "cells");
 			
 			document.getElementById("fieldgrid").appendChild(ll);
 		}
