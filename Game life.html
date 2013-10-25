@@ -4,9 +4,9 @@
 </script>
 <head>
 </head>
-<body onload = "paintgrid()">
+<body onload = "paintgrid()" onMouseMove="getMouseCoords()">
 <button onclick = "nextstep()">Следующий шаг</button>
-<svg id="fieldgrid" height = "600px"  width = "600px">
+<svg id="fieldgrid" height = "600px"  width = "600px" onclick="mouseclick()">
      <rect x="0" y="0" width="600" height="600" fill="none" stroke="black" stroke-width="5px" stroke-opacity="0.5"/>
 </svg>
 </body>
