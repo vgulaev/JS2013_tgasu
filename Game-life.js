@@ -13,63 +13,6 @@ for (var i = 0; i < 60; i++){
 }
 
 
-//Планер
-lifefield[10][10] = 1;
-lifefield[11][10] = 1;
-lifefield[12][10] = 1;
-lifefield[12][9] = 1;
-lifefield[11][8] = 1;
-
-//Планер
-lifefield[10][5] = 1;
-lifefield[11][5] = 1;
-lifefield[12][5] = 1;
-lifefield[12][4] = 1;
-lifefield[11][3] = 1;
-
-//Планер
-lifefield[1][10] = 1;
-lifefield[2][10] = 1;
-lifefield[3][10] = 1;
-lifefield[3][9] = 1;
-lifefield[2][8] = 1;
-
-//Планер
-lifefield[25][10] = 1;
-lifefield[26][10] = 1;
-lifefield[27][10] = 1;
-lifefield[25][9] = 1;
-lifefield[26][8] = 1;
-
-//Планер
-lifefield[20][10] = 1;
-lifefield[21][10] = 1;
-lifefield[22][10] = 1;
-lifefield[20][9] = 1;
-lifefield[21][8] = 1;
-
-//Просто линия из 3 элементов
-lifefield[3][3] = 1;
-lifefield[4][3] = 1;
-lifefield[5][3] = 1;
-
-/////Фигура в классе
-lifefield[20][20] = 1;
-lifefield[21][20] = 1;
-lifefield[22][20] = 1;
-
-lifefield[20][24] = 1;
-lifefield[21][24] = 1;
-lifefield[22][24] = 1;
-
-lifefield[19][21] = 1;
-lifefield[18][22] = 1;
-lifefield[19][23] = 1;
-
-lifefield[23][21] = 1;
-lifefield[24][22] = 1;
-lifefield[23][23] = 1;
-
 function checklife(x, y)
 {
 	var nx, ny;
@@ -177,4 +120,32 @@ function paintgrid()
 		document.getElementById("fieldgrid").appendChild(ll);
 	}
 	paintlife();
+}
+var mX,mY; 
+
+function getMouseCoords()
+{
+ bt=document.getElementById("fieldgrid");
+  mX = this.event.x;
+  mY = this.event.y; 
+}
+
+function mouseclick()
+{
+var t=Math.floor(mX/10)-1;
+var k=Math.floor(mY/10)-3;
+lifefield[t][k] = 1;
+ll = document.createElementNS('http://www.w3.org/2000/svg', 'rect')
+                        ll.setAttribute("x", 0 + 10 * t);
+                        ll.setAttribute("y", 0 + 10 * k);
+                        ll.setAttribute("width", 10);
+                        ll.setAttribute("height", 10);
+                        ll.setAttribute("fill", "black");
+                        ll.setAttribute("stroke", "black");
+                        ll.setAttribute("stroke-width", "0px");
+                        ll.setAttribute("stroke-opacity", "0.5");
+                        ll.setAttribute("id", "lf"+t+"-"+k);
+                        ll.setAttribute("class", "cells");
+                        lifefield[t][k] = 1;
+                        document.getElementById("fieldgrid").appendChild(ll);
 }
