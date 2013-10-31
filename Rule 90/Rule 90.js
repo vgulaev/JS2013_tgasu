@@ -14,7 +14,7 @@ for (var i = 0; i < 100; i++){
 
 
 
-//lifefield[50][0] = 1;
+lifefield[50][0] = 1;
 
 function checklife_rule90(x, y)
 {
@@ -84,7 +84,8 @@ function nextstep()
 	//children i
 	chi = istep + 1;
 	for (var i = 1; i < 99; i++){
-		lifefield[i][chi] = checklife_rule161(i, chi);
+		lifefield[i][chi] = checklife_rule90(i, chi);
+		//lifefield[i][chi] = checklife_rule161(i, chi);
 	}
 	istep = chi;
 	/*for (var i = 0; i < 60; i++){
