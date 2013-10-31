@@ -8,12 +8,12 @@ lifefield = new Array(60);
 for (var i = 0; i < 60; i++){
 	lifefield[i] = new Array(60);
 	for (var j = 0; j < 60; j++){
-		lifefield[i][j] = 0;
+		lifefield[i][j] = Math.round(Math.random());
 	}
 }
 
 
-//Планер
+/*/*Планер
 lifefield[10][10] = 1;
 lifefield[11][10] = 1;
 lifefield[12][10] = 1;
@@ -68,7 +68,7 @@ lifefield[19][23] = 1;
 
 lifefield[23][21] = 1;
 lifefield[24][22] = 1;
-lifefield[23][23] = 1;
+lifefield[23][23] = 1;*/
 
 function checklife(x, y)
 {
