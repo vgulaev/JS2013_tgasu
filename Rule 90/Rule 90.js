@@ -18,7 +18,7 @@ lifefield[29][0] = 1;
 
 function checklife(x, y)
 {
-	var nx, ny;
+	/*var nx, ny;
 	var neib = -lifefield[x][y];
 	for (var i = -1; i < 2; i++){
 		for (var j = -1; j < 2; j++){
@@ -43,18 +43,20 @@ function checklife(x, y)
 	}
 	if ((r == 0)&&(lifefield[x][y] == 1)){
 		r = -1;
-	}
-	return r;
+	}*/
+	return 1;
 }
 
+istep = 0;
 function nextstep()
 {
+	//children i
+	chi = istep + 1;
 	for (var i = 0; i < 60; i++){
-		for (var j = 0; j < 60; j++){
-			lifefield[i][j] = checklife(i, j);
-		}
+		lifefield[i][chi] = checklife(i, chi);
 	}
-	for (var i = 0; i < 60; i++){
+	istep = chi;
+	/*for (var i = 0; i < 60; i++){
 		for (var j = 0; j < 60; j++){
 			if (lifefield[i][j] > 0){
 				lifefield[i][j] = 1;
@@ -63,7 +65,7 @@ function nextstep()
 				lifefield[i][j] = 0;
 			}
 		}
-	}	
+	}*/	
 	//checklife(21, 19);
 	paintlife();
 	setTimeout("nextstep()", 100)
