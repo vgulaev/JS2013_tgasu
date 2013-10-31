@@ -16,8 +16,36 @@ for (var i = 0; i < 60; i++){
 
 lifefield[29][0] = 1;
 
-function checklife(x, y)
+function checklife_rule90(x, y)
 {
+	var r;
+	for (var i = 1; i < 59; i++){
+		var det = lifefield[i-1][y-1] * 4 + lifefield[i][y-1] * 2 + lifefield[i+1][y-1];
+		if (det == 0){
+			r = 0;
+		}
+		if (det == 1){
+			r = 1;
+		}
+		if (det == 2){
+			r = 0;
+		}
+		if (det == 3){
+			r = 1;
+		}
+		if (det == 4){
+			r = 1;
+		}
+		if (det == 5){
+			r = 0;
+		}
+		if (det == 6){
+			r = 1;
+		}
+		if (det == 7){
+			r = 0;
+		}
+	}
 	/*var nx, ny;
 	var neib = -lifefield[x][y];
 	for (var i = -1; i < 2; i++){
@@ -44,7 +72,7 @@ function checklife(x, y)
 	if ((r == 0)&&(lifefield[x][y] == 1)){
 		r = -1;
 	}*/
-	return 1;
+	return r;
 }
 
 istep = 0;
@@ -53,7 +81,7 @@ function nextstep()
 	//children i
 	chi = istep + 1;
 	for (var i = 0; i < 60; i++){
-		lifefield[i][chi] = checklife(i, chi);
+		lifefield[i][chi] = checklife_rule90(i, chi);
 	}
 	istep = chi;
 	/*for (var i = 0; i < 60; i++){
