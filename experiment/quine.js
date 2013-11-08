@@ -1,5 +1,4 @@
-﻿istep = 0;
-function nextstep()
+﻿function nextstep()
 {
 	//children i
 	chi = istep + 1;
@@ -22,4 +21,10 @@ function nextstep()
 	if (chi < 99){
 		setTimeout("nextstep()", 100)
 	}
+}
+
+function doquine() {
+	//(new nextstep())
+	op = document.getElementById("output");
+	op.innerHTML = "Hello";
 }
