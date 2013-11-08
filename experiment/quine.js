@@ -3,9 +3,9 @@
 	//children i
 	chi = istep + 1;
 	for (var i = 1; i < 99; i++){
-		lifefield[i][chi] = checklife_rule161(i, chi);
+		//lifefield[i][chi] = checklife_rule161(i, chi);
 	}
-	istep = chi;
+	var istep = chi;
 	/*for (var i = 0; i < 60; i++){
 		for (var j = 0; j < 60; j++){
 			if (lifefield[i][j] > 0){
@@ -17,7 +17,7 @@
 		}
 	}*/	
 	//checklife(21, 19);
-	paintlife();
+	//paintlife();
 	if (chi < 99){
 		setTimeout("nextstep()", 100)
 	}
@@ -26,5 +26,6 @@
 function doquine() {
 	//(new nextstep())
 	op = document.getElementById("output");
-	op.innerHTML = "Hello";
+	op.innerHTML = nextstep.toString();
 }
+//function f(){alert(f.toString()+"f();");}f();
