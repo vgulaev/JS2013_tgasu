@@ -178,3 +178,32 @@ function paintgrid()
 	}
 	paintlife();
 }
+
+var mX,mY;
+
+function getMouseCoords()
+{
+ bt=document.getElementById("fieldgrid");
+  mX = this.event.x;
+  mY = this.event.y; 
+}
+
+function mouseclick()
+{
+var t=Math.floor(mX/10)-1;
+var k=Math.floor(mY/10)-3;
+lifefield[t][k] = 1;
+ll = document.createElementNS('http://www.w3.org/2000/svg', 'rect')
+                        ll.setAttribute("x", 0 + 10 * t);
+                        ll.setAttribute("y", 0 + 10 * k);
+                        ll.setAttribute("width", 10);
+                        ll.setAttribute("height", 10);
+                        ll.setAttribute("fill", "black");
+                        ll.setAttribute("stroke", "black");
+                        ll.setAttribute("stroke-width", "0px");
+                        ll.setAttribute("stroke-opacity", "0.5");
+                        ll.setAttribute("id", "lf"+t+"-"+k);
+                        ll.setAttribute("class", "cells");
+                        lifefield[t][k] = 1;
+                        document.getElementById("fieldgrid").appendChild(ll);
+}
